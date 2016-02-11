@@ -14,4 +14,6 @@ docker build -t docker-port-check .
 
 Open port for virtual machine "default" using "Network" settings
 
+docker run -i -t -p 80:8000 docker-port-check
+
 curl http://localhost:80
