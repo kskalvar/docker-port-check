@@ -5,7 +5,11 @@ Needed a realy simple way to check port access on a docker machine before starti
 
 
 docker-machine create -d virtualbox default
+
 eval $(docker-machine env default)
+
+docker run hello-world
+
 
 
 
