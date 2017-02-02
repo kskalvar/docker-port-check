@@ -8,5 +8,5 @@ docker-machine create -d virtualbox default
 eval $(docker-machine env default)  
 docker run hello-world  
 docker build -t docker-port-check .  
-docker run -i -t -p 80:8000 docker-port-check  
+docker run -d -p 80:8000 --name port-check docker-port-check  
 curl http://$(docker-machine ip default)
