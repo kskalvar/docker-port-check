@@ -1,4 +1,4 @@
-# Docker Port Check using DockerToolbox 17.07.0-ce and Virtualbox 6.0
+# Docker Port Check using DockerToolbox 17.07.0-ce and Virtualbox 6.0 on WIN 7
 
 #### Needed a really simple way to check port access on a docker machine before starting up applications, etc.  Docker has a nice hello-world to insure your docker machine is up and running and this helps to insure you're ok with the ports as well.
 
@@ -15,5 +15,5 @@ curl http://$(docker-machine ip default)
 Note: If you prefer to use "localhost" instead of "$(docker-machine ip default)" you'll need to set the Virtual Box NAT Router 
 ```
 vboxmanage modifyvm default --natpf1 ,tcp,,80,,80  
-curl http://localhost
+curl http://localhost  
 
