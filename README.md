@@ -1,11 +1,14 @@
 # Docker Port Check using DockerToolbox 17.07.0-ce and Virtualbox 6.0 on WIN 7
 
-#### Needed a really simple way to check port access on a docker machine before starting up applications, etc.  Docker has a nice hello-world to insure your docker machine is up and running and this helps to insure you're ok with the ports as well.
+#### Needed a really simple way to check port access on a docker machine before starting up applications, etc.  Docker has a nice hello-world to insure your docker machine is up and running and this helps to insure you're  ok with the ports as well.
 
+Create the docker machine and build the runtime container
+```
 docker-machine create -d virtualbox default  
 eval $(docker-machine env default)  
 docker run hello-world  
-docker build -t port-check-runtime . 
+docker build -t port-check-runtime .
+``` 
 ```
 Note: container "port-check" exposes it's http service on port 8000 and we redirect to the docker-machine
 port 80 
