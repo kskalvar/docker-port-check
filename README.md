@@ -21,7 +21,7 @@ curl http://$(docker-machine ip default)
 Note: If you prefer to use "localhost" instead of "$(docker-machine ip default)" you'll need to set the
 Virtual Box NAT Router 
 ```
-vboxmanage modifyvm default --natpf1 ,tcp,,80,,80  
 ```
+vboxmanage modifyvm default --natpf1 ,tcp,,80,,80  
 curl http://localhost
 ```  
