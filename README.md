@@ -9,6 +9,7 @@ eval $(docker-machine env default)
 docker run hello-world  
 docker build -t port-check-runtime .
 ``` 
+Start the container and redirect port to 80
 ```
 Note: container "port-check" exposes it's http service on port 8000 and we redirect to the docker-machine
 port 80 
@@ -17,10 +18,12 @@ port 80
 docker run -d -p 80:8000 --name port-check port-check-runtime  
 curl http://$(docker-machine ip default)
 ```
+Use localhost instead of "$(docker-machine ip default)"
 ```
 Note: If you prefer to use "localhost" instead of "$(docker-machine ip default)" you'll need to set the
 VirtualBox NAT Router 
 ```
+You'll need to stop and restart the docker machine in order to configure the NAT Router
 ```
 docker-machine stop
 vboxmanage modifyvm default --natpf1 ,tcp,,80,,80
