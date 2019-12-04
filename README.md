@@ -22,6 +22,10 @@ Note: If you prefer to use "localhost" instead of "$(docker-machine ip default)"
 VirtualBox NAT Router 
 ```
 ```
-vboxmanage modifyvm default --natpf1 ,tcp,,80,,80  
+docker-machine stop
+vboxmanage modifyvm default --natpf1 ,tcp,,80,,80
+docker-machine start
+  
+docker start port-check
 curl http://localhost
 ```  
